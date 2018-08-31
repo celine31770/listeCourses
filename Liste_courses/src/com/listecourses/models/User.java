@@ -19,20 +19,20 @@ public class User  {
 	@Column(name="password")
 	private String password;
 	
-	@Column(name="lastName")
-	private String last_name;
+	@Column(name="last_name")
+	private String lastName;
 	
-	@Column(name="firstName")
-	private String first_name;
+	@Column(name="first_name")
+	private String firstName;
 	
 	// Date d'inscription ou date du jour de l'invitation
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="dateCreation",updatable=false, nullable=false)
-	private Date date_creation;
+	@Column(name="date_creation",updatable=false, nullable=false)
+	private Date dateCreation;
 	
 	// Pour savoir si le compte est actif ou pas 
-	@Column(name="isValid",nullable=false,columnDefinition = "boolean default false")
-	private boolean is_valid;
+	@Column(name="is_valid",nullable=false,columnDefinition = "boolean default false")
+	private boolean isValid;
 	
 	
 	// CONSTRUCTEUR 
@@ -43,13 +43,13 @@ public class User  {
 	}
 	
 	// pour création du compte lors de l'inscription
-	public User(String email, String password, String last_name, String first_name, boolean is_valid) {
+	public User(String email, String password, String lastName, String firstName, boolean isValid) {
 		super();
 		this.email = email;
 		this.password = password;
-		this.last_name = last_name;
-		this.first_name = first_name;
-		this.is_valid = is_valid;
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.isValid = isValid;
 	}
 
 	
@@ -74,33 +74,33 @@ public class User  {
 		this.password = password;
 	}
 
-	public String getLast_name() {
-		return last_name;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
-	public String getFirst_name() {
-		return first_name;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public Date getDate_creation() {
-		return date_creation;
+	public Date getDateCreation() {
+		return dateCreation;
 	}
 
 
-	public boolean getIs_valid() {
-		return is_valid;
+	public boolean getIsValid() {
+		return isValid;
 	}
 
-	public void setIs_valid(boolean is_valid) {
-		this.is_valid = is_valid;
+	public void setIsValid(boolean is_valid) {
+		this.isValid = is_valid;
 	}
 	
 	
@@ -111,7 +111,7 @@ public class User  {
 	// Si on voulait exécuter qlqe chose au moment de l'update, ce serait @PreUpdate
 	@PrePersist
 	private void onCreate() {
-		date_creation = new Date();
+		dateCreation = new Date();
 	}
 	
 	
