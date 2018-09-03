@@ -39,7 +39,7 @@ public class User_  {
 	private ArrayList<Contact> listeContact;
 	
 	// Pour récupérer la liste des listes de courses
-	private ArrayList<List> listeCourse;
+	private ArrayList<ShoppingList> listeCourse;
 	
 	
 	// CONSTRUCTEUR 
@@ -154,11 +154,11 @@ public class User_  {
 		this.listeContact = listeContact;
 	}
 	
-	public ArrayList<List> getListeCourse() {
+	public ArrayList<ShoppingList> getListeCourse() {
 		return listeCourse;
 	}
 
-	public void setListeCourse(ArrayList<List> listeCourse) {
+	public void setListeCourse(ArrayList<ShoppingList> listeCourse) {
 		this.listeCourse = listeCourse;
 	}
 	
@@ -175,12 +175,12 @@ public class User_  {
 	}
 	
 	// Ajouter une liste de course
-	public void addListCourse(List e) {
+	public void addListCourse(ShoppingList e) {
 		this.listeCourse.add(e);
 	}
 	
 	// Supprimer une liste de course
-	public void deleteListCourse(List e) {
+	public void deleteListCourse(ShoppingList e) {
 		this.listeCourse.remove(e);
 	}
 	

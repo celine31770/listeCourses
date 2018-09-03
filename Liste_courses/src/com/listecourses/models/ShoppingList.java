@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity 
 @Table(name="list")
-public class List {
+public class ShoppingList {
 	
 	//VARIABLES	
 	@Id
@@ -27,7 +27,7 @@ public class List {
 	
 	// CONSTRUCTEUR
 
-	public List(String name) {
+	public ShoppingList(String name) {
 		this.name = name;
 	}
 	
