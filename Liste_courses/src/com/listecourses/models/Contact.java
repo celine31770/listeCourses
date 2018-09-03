@@ -7,29 +7,29 @@ import javax.persistence.*;
 public class Contact {
 	
 	@Column(name="user_id",updatable=false,nullable=false)
-	private User userId;
+	private User_ userId;
 	
 	@Column(name="contact_id",updatable=false,nullable=false)
-	private User contactId;
+	private User_ contactId;
 	
 	@Column(name="name")
 	private String name;
 	
 
 	// GETTERS ET SETTERS ***************
-	public User getUserId() {
+	public User_ getUserId() {
 		return userId;
 	}
 
-	public void setUserId(User userId) {
+	public void setUserId(User_ userId) {
 		this.userId = userId;
 	}
 
-	public User getContactId() {
+	public User_ getContactId() {
 		return contactId;
 	}
 
-	public void setContactId(User contactId) {
+	public void setContactId(User_ contactId) {
 		this.contactId = contactId;
 	}
 

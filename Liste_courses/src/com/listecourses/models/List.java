@@ -11,8 +11,7 @@ import javax.persistence.Table;
 @Table(name="list")
 public class List {
 	
-	//VARIABLES
-	
+	//VARIABLES	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id",updatable=false,nullable=false,unique=true)

@@ -6,7 +6,7 @@ import javax.persistence.*;
 // Ca dit a hibernate que ça correspond à une table de BDD
 @Entity 
 @Table(name="User")
-public class User  {
+public class User_  {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -37,13 +37,13 @@ public class User  {
 	
 	// CONSTRUCTEUR 
 	// pour création du compte au moment d'une invitation
-	public User(String email) {
+	public User_(String email) {
 		super();
 		this.email = email;
 	}
 	
 	// pour création du compte lors de l'inscription
-	public User(String email, String password, String lastName, String firstName, boolean isValid) {
+	public User_(String email, String password, String lastName, String firstName, boolean isValid) {
 		super();
 		this.email = email;
 		this.password = password;
@@ -52,7 +52,44 @@ public class User  {
 		this.isValid = isValid;
 	}
 
+	private String machin;
 	
+	public String getMachin() {
+		return machin;
+	}
+
+	public void setMachin(String machin) {
+		this.machin = machin;
+	}
+	
+
+	@Override
+	public String toString() {
+		return "User_ [id=" + id + ", email=" + email + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User_ other = (User_) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+
 	// GETTERS ET SETTERS ***************
 	public long getId() {
 		return id;
