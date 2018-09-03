@@ -1,5 +1,7 @@
 package com.listecourses.models;
 
+import java.util.ArrayList;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,6 +22,9 @@ public class List {
 	@Column(name="name",nullable=false)
 	private String name;
 	
+	// Pour récupérer la liste des articles
+	private ArrayList<Article> listeArticle;
+	
 	// CONSTRUCTEUR
 
 	public List(String name) {
@@ -39,6 +44,29 @@ public class List {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public ArrayList<Article> getListeArticle() {
+		return listeArticle;
+	}
+
+	public void setListeArticle(ArrayList<Article> listeArticle) {
+		this.listeArticle = listeArticle;
+	}
+	
+	// CUSTOM METHODS *************
+	// ****************************
+	
+	// Ajouter un article de la liste
+	public void addArticle(Article e) {
+		this.listeArticle.add(e);
+	}
+	
+	// Supprimer un article de la liste
+	public void deleteArticle(Article e) {
+		this.listeArticle.remove(e);
+	}
+	
+	
 	
 
 }

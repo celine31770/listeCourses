@@ -1,5 +1,5 @@
 package com.listecourses.models;
-import java.util.Date;
+import java.util.*;
 import javax.persistence.*;
 
 
@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Table(name="User")
 public class User_  {
 	
+	//VARIABLES	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id",updatable=false,nullable=false,unique=true)
@@ -33,6 +34,12 @@ public class User_  {
 	// Pour savoir si le compte est actif ou pas 
 	@Column(name="is_valid",nullable=false,columnDefinition = "boolean default false")
 	private boolean isValid;
+	
+	// Pour récupérer la liste des contacts
+	private ArrayList<Contact> listeContact;
+	
+	// Pour récupérer la liste des listes de courses
+	private ArrayList<List> listeCourse;
 	
 	
 	// CONSTRUCTEUR 
@@ -131,7 +138,6 @@ public class User_  {
 		return dateCreation;
 	}
 
-
 	public boolean getIsValid() {
 		return isValid;
 	}
@@ -140,10 +146,27 @@ public class User_  {
 		this.isValid = is_valid;
 	}
 	
+	public ArrayList<Contact> getListeContact() {
+		return listeContact;
+	}
+
+	public void setListeContact(ArrayList<Contact> listeContact) {
+		this.listeContact = listeContact;
+	}
+	
+	public ArrayList<List> getListeCourse() {
+		return listeCourse;
+	}
+
+	public void setListeCourse(ArrayList<List> listeCourse) {
+		this.listeCourse = listeCourse;
+	}
+	
 	
 	// CUSTOM METHODS *************
 	// ****************************
-	
+
+
 	// Au moment de la création de l'enregistrement
 	// Si on voulait exécuter qlqe chose au moment de l'update, ce serait @PreUpdate
 	@PrePersist
@@ -154,4 +177,4 @@ public class User_  {
 	
 	
 
-}
+}// Fin class User
