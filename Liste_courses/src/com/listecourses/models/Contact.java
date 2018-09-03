@@ -7,30 +7,42 @@ import javax.persistence.*;
 public class Contact {
 	
 	@Column(name="user_id",updatable=false,nullable=false)
-	private User_ userId;
+	private User_ user;
 	
 	@Column(name="contact_id",updatable=false,nullable=false)
-	private User_ contactId;
+	private User_ contact;
 	
 	@Column(name="name")
 	private String name;
 	
+	
+	
+	// CONSTRUCTEUR
+	public Contact(User_ user, User_ contact) {
+		// Si les utilisateurs sont différents
+		if(!user.equals(contact)) {
+		this.user = user;
+		this.contact = contact;
+		}else {
+			System.out.println("Vous êtes le contact invité");
+		}
+	}
 
 	// GETTERS ET SETTERS ***************
 	public User_ getUserId() {
-		return userId;
+		return user;
 	}
 
 	public void setUserId(User_ userId) {
-		this.userId = userId;
+		this.user = userId;
 	}
 
 	public User_ getContactId() {
-		return contactId;
+		return contact;
 	}
 
 	public void setContactId(User_ contactId) {
-		this.contactId = contactId;
+		this.contact = contactId;
 	}
 
 	public String getName() {

@@ -26,8 +26,9 @@ public class ShoppingList {
 	private ArrayList<Article> listeArticle;
 	
 	// CONSTRUCTEUR
-
 	public ShoppingList(String name) {
+		// on instancie une liste d'article vide
+		this.listeArticle = new ArrayList<Article>();
 		this.name = name;
 	}
 	

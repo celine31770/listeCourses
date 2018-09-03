@@ -3,6 +3,8 @@ package com.listecourses.dao;
 import com.listecourses.models.User_;
 
 public class User_Dao implements IAbstractDao<User_> {
+	
+	
 
 	@Override
 	public void create(User_ entity) {
