@@ -174,6 +174,25 @@ public class User_  {
 		dateCreation = new Date();
 	}
 	
+	// Ajouter une liste de course
+	public void addListCourse(List e) {
+		this.listeCourse.add(e);
+	}
+	
+	// Supprimer une liste de course
+	public void deleteListCourse(List e) {
+		this.listeCourse.remove(e);
+	}
+	
+	// Ajouter un contact à la liste de Contact
+	public void addContact(Contact e) {
+		this.listeContact.add(e);
+	}
+	
+	// Supprimer un contact de la liste Contact
+	public void deleteContact(Contact e) {
+		this.listeContact.remove(e);
+	}
 	
 	
 
