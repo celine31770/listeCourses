@@ -8,10 +8,10 @@ import com.listecourses.models.User_;
 public class User_Dao implements IAbstractDao<User_> {
 	
 	// On créé la liste de user en appelant la méthode generateUserList
-	public static  ArrayList<User_> userList = PopulateUser_.generateUserList();
+	public static ArrayList<User_> userList = PopulateUser_.generateUserList();
 	
 	
-	
+	//pour peupler les listes des users (à faire dés le début de l'app)
 	public static void Init() {
 		ArrayList<Contact> listContact = PopulateContact.generateContactList();
 		// AJOUT DES CONTACTS DANS LA LISTE DE CONTACTS DU USER EN COURS
@@ -25,18 +25,21 @@ public class User_Dao implements IAbstractDao<User_> {
 				}
 			}
 
-		ArrayList<Article> listArticle = PopulateArticle.generateArticleList();
-		// AJOUT DES ARTICLES DANS LA LISTE D'ARTICLES DU USER EN COURS
-		for(Article article:listArticle){ // pour chaque article 
-			if(u.equals(article.getUser())){ // si le user propriétaire de l'article est le user en cours
-				u.addArticle(article); //on ajoute l'article dans la liste d'article de l'user
+			
+			
+	
+			ArrayList<Article> listArticle = PopulateArticle.generateArticleList();
+			// AJOUT DES ARTICLES DANS LA LISTE D'ARTICLES DU USER EN COURS
+			for(Article article:listArticle){ // pour chaque article 
+				if(u.equals(article.getUser())){ // si le user propriétaire de l'article est le user en cours
+					u.addArticle(article); //on ajoute l'article dans la liste d'article de l'user
+				}
 			}
-		}
+			// AJOUT DES SHOPPING LISTE DANS LA LISTE  DU USER EN COURS
+						//creation de la shopping list de l'user en mettant les articles associé a la shoppingList
 			
-			
-		// AJOUT DES SHOPPING LISTE DANS LA LISTE  DU USER EN COURS
-		//creation de la shopping list de l'user en mettant les articles associé a la shoppingList
-		u.addListCourse(PopulateArticle.generateShoppingList(u));
+			ShoppingList sl = PopulateArticle.generateShoppingList(u);
+			u.addListCourse(sl);
 		
 			
 		}//fin du for

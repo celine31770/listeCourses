@@ -40,6 +40,7 @@ public class PopulateArticle {
 		// On créé une shoppingList (liste d'articles)
 		ShoppingList shoppingList = new ShoppingList("Liste de " + user.getFirstName());
 		
+		
 		// ON boucle sur la liste d'articles pour le user
 		for(int i = 0; i < articleSize ; i++) {
 

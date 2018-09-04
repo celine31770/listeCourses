@@ -36,13 +36,13 @@ public class User_  {
 	private boolean isValid;
 	
 	// Pour récupérer la liste des contacts
-	private ArrayList<Contact> listeContact;
+	private ArrayList<Contact> listeContact = new ArrayList<Contact>();
 	
 	// Pour récupérer la liste des listes de courses
-	private ArrayList<ShoppingList> listeCourse;
+	private ArrayList<ShoppingList> listeCourse = new ArrayList<ShoppingList>();
 
 	// Pour récupérer la liste des listes de courses
-	private ArrayList<Article> listeArticle;
+	private ArrayList<Article> listeArticle = new ArrayList<Article>();
 	
 	// CONSTRUCTEUR 
 	// pour création du compte au moment d'une invitation
@@ -59,44 +59,6 @@ public class User_  {
 		this.lastName = lastName;
 		this.firstName = firstName;
 		this.isValid = isValid;
-	}
-
-	private String machin;
-	
-	public String getMachin() {
-		return machin;
-	}
-
-	public void setMachin(String machin) {
-		this.machin = machin;
-	}
-	
-
-	@Override
-	public String toString() {
-		return "User_ [id=" + id + ", email=" + email + "]";
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (id ^ (id >>> 32));
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User_ other = (User_) obj;
-		if (id != other.id)
-			return false;
-		return true;
 	}
 
 	// GETTERS ET SETTERS ***************
