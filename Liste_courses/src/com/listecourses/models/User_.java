@@ -40,7 +40,9 @@ public class User_  {
 	
 	// Pour récupérer la liste des listes de courses
 	private ArrayList<ShoppingList> listeCourse;
-	
+
+	// Pour récupérer la liste des listes de courses
+	private ArrayList<Article> listeArticle;
 	
 	// CONSTRUCTEUR 
 	// pour création du compte au moment d'une invitation
@@ -161,6 +163,14 @@ public class User_  {
 	public void setListeCourse(ArrayList<ShoppingList> listeCourse) {
 		this.listeCourse = listeCourse;
 	}
+
+	public ArrayList<Article> getListeArticle() {
+		return listeArticle;
+	}
+
+	public void setListeArticle(ArrayList<Article> listeArticle) {
+		this.listeArticle = listeArticle;
+	}
 	
 	
 	// CUSTOM METHODS *************
@@ -192,6 +202,16 @@ public class User_  {
 	// Supprimer un contact de la liste Contact
 	public void deleteContact(Contact e) {
 		this.listeContact.remove(e);
+	}
+	
+	// Ajouter un article à la liste de Contact
+	public void addArticle(Article e) {
+		this.listeArticle.add(e);
+	}
+	
+	// Supprimer un article de la liste Contact
+	public void deleteArticle(Article e) {
+		this.listeArticle.remove(e);
 	}
 	
 	
