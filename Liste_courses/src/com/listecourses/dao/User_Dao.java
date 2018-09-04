@@ -14,7 +14,7 @@ public class User_Dao implements IAbstractDao<User_> {
 	
 	public static void Init() {
 		ArrayList<Contact> listContact = PopulateContact.generateContactList();
-		
+		// AJOUT DES CONTACTS DANS LA LISTE DE CONTACTS DU USER EN COURS
 		// On va boucler sur tous les users dans userList
 		for(User_ u: userList){ // pour chaque user de la liste
 			for(Contact c:listContact){  // on parcours tous les contacts
@@ -24,9 +24,24 @@ public class User_Dao implements IAbstractDao<User_> {
 					u.addContact(c);
 				}
 			}
-		}
 
-	}
+		ArrayList<Article> listArticle = PopulateArticle.generateArticleList();
+		// AJOUT DES ARTICLES DANS LA LISTE D'ARTICLES DU USER EN COURS
+		for(Article article:listArticle){ // pour chaque article 
+			if(u.equals(article.getUser())){ // si le user propriétaire de l'article est le user en cours
+				u.addArticle(article); //on ajoute l'article dans la liste d'article de l'user
+			}
+		}
+			
+			
+		// AJOUT DES SHOPPING LISTE DANS LA LISTE  DU USER EN COURS
+		//creation de la shopping list de l'user en mettant les articles associé a la shoppingList
+		u.addListCourse(PopulateArticle.generateShoppingList(u));
+		
+			
+		}//fin du for
+
+	}//fin de methode
 	
 	@Override
 	public void create(User_ entity) {
