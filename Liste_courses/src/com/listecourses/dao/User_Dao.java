@@ -10,6 +10,7 @@ public class User_Dao implements IAbstractDao<User_> {
 	// On créé la liste de user en appelant la méthode generateUserList
 	public static ArrayList<User_> userList = PopulateUser_.generateUserList();
 	
+	public static boolean isInit = false;
 	
 	//pour peupler les listes des users (à faire dés le début de l'app)
 	public static void Init() {
@@ -25,9 +26,6 @@ public class User_Dao implements IAbstractDao<User_> {
 				}
 			}
 
-			
-			
-	
 			ArrayList<Article> listArticle = PopulateArticle.generateArticleList();
 			// AJOUT DES ARTICLES DANS LA LISTE D'ARTICLES DU USER EN COURS
 			for(Article article:listArticle){ // pour chaque article 
@@ -35,15 +33,16 @@ public class User_Dao implements IAbstractDao<User_> {
 					u.addArticle(article); //on ajoute l'article dans la liste d'article de l'user
 				}
 			}
-			// AJOUT DES SHOPPING LISTE DANS LA LISTE  DU USER EN COURS
-						//creation de la shopping list de l'user en mettant les articles associé a la shoppingList
 			
+			// AJOUT DES SHOPPING LISTE DANS LA LISTE  DU USER EN COURS
+			//creation de la shopping list de l'user en mettant les articles associé a la shoppingList
 			ShoppingList sl = PopulateArticle.generateShoppingList(u);
 			u.addListCourse(sl);
 		
 			
 		}//fin du for
 
+		isInit = true;
 	}//fin de methode
 	
 	@Override

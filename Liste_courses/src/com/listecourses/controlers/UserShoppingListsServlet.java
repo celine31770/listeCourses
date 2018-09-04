@@ -45,8 +45,7 @@ public class UserShoppingListsServlet extends HttpServlet {
 		for(ShoppingList shopLists: listeDeListeDeShopping){
 			System.out.println(shopLists.getName());
 		}
-		
-		
+
 		response.getWriter().append("email : ").append(userEnvoye.getEmail());
 		response.getWriter().append("List courses : ").append(request.getContextPath());
 	}
