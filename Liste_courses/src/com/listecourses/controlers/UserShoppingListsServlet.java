@@ -36,18 +36,18 @@ public class UserShoppingListsServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession session = request.getSession(true);
-		String ln = (String) session.getAttribute("lastName");
-		User_ userEnvoye = (User_)session.getAttribute("user");
-		
-		User_Dao.Init();
-		ArrayList<ShoppingList> listeDeListeDeShopping = userEnvoye.getListeCourse();
-		for(ShoppingList shopLists: listeDeListeDeShopping){
-			System.out.println(shopLists.getName());
-		}
-
-		response.getWriter().append("email : ").append(userEnvoye.getEmail());
-		response.getWriter().append("List courses : ").append(request.getContextPath());
+//		HttpSession session = request.getSession(true);
+//		String ln = (String) session.getAttribute("lastName");
+//		User_ userEnvoye = (User_)session.getAttribute("user");
+//		
+//		User_Dao.Init();
+//		ArrayList<ShoppingList> listeDeListeDeShopping = userEnvoye.getListeCourse();
+//		for(ShoppingList shopLists: listeDeListeDeShopping){
+//			System.out.println(shopLists.getName());
+//		}
+//
+//		response.getWriter().append("email : ").append(userEnvoye.getEmail());
+//		response.getWriter().append("List courses : ").append(request.getContextPath());
 	}
 
 	/**
